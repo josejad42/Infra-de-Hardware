@@ -1,13 +1,25 @@
-#os numeros digitados devem ser menores do que 100 e ter duas casas 
+#os numeros digitados devem ser menores do que 100 e ter dois algarismos
 #exemplo: ao invés de 2 digite 02
+#a entrada sera no formato: 00 62 26
 
-jal x1, carrega
+#carrega a, b, c nos registradores
+carrega:
+    jal x12, loop #pula para o loop para ler o número a
+    xor x5, x5, x5 
+    add x5, x5, x31 #salva o valor de a em x5
+    jal x12, loop #pula para o loop para ler o número b
+    xor x6, x6, x6
+    add x6, x6, x31 #salva o valor de b em x6
+    jal x12, loop #pula para o loop para ler o número c
+    xor x7, x7, x7
+    add x7, x7, x31 #salva o valor de c em x7
+    jal x11, condicao1
 
 loop:
-lb x14, 1025(x0) #le caractere do teclado (dezena)
-lb x15, 1025(x0) #le caractere do teclado (unidade)
-lb x27, 1025(x0) #le caractere do teclado (space ou vazio)
-jal x1, dezena
+    lb x14, 1025(x0) #le caractere do teclado (dezena)
+    lb x15, 1025(x0) #le caractere do teclado (unidade)
+    lb x27, 1025(x0) #le caractere do teclado (space ou vazio)
+    jal x1, dezena
 
 #computa a dezena
 dezena:
@@ -33,6 +45,7 @@ dezena:
 	beq x14, x8, mul9
     jal x1, unidade 
 	
+	#as funcoes do genero mulX retornam o valor da multlipicacao de X por dez
 	mul0:
     		addi x5, x0, 0
 		jal x11, unidade
@@ -67,56 +80,43 @@ dezena:
 #soma valor de unidade com valor da dezena
 unidade:
     xor x31, x31, x31
-    addi x15, x15, -48 
+    addi x15, x15, -48 #transforma o valor em ascii em decimal
     add x31, x15, x5 #soma o resultado da multlipicacao de x3 por x4 que está em x5 com o valor da unidade salvo em x15
     jalr x0, 0(x12)
 
-
-#carrega a, b, c nos registradores
-carrega:
-jal x12, loop
-xor x5, x5, x5
-add x5, x5, x31
-jal x12, loop
-xor x6, x6, x6
-add x6, x6, x31
-jal x12, loop
-xor x7, x7, x7
-add x7, x7, x31
-
 condicao1:
-addi x16, x0, 48 #garante como x16 (nosso x) começa zerado
-#verifica se a >= 0
-bge x5, x0, condicao2
-jal x11, fim
+    addi x16, x0, 48 #transforma x em 0 em ascii
+    #verifica se a >= 0
+    bge x5, x0, condicao2
+    jal x11, fim
 
 condicao2:
-lw x28, sessenta_dois
-#verifica b<62
-blt x6, x28, condicao3a
-#verifica b==62
-beq x6, x28, condicao3a
-jal x11, fim
+    lw x28, sessenta_dois
+    #verifica b<62
+    blt x6, x28, condicao3a
+    #verifica b==62
+    beq x6, x28, condicao3a
+    jal x11, fim
 
 #verifica c >= 15 (o necessario é ver se c>15, por isso a parte B)
 condicao3a:
-lw x29, quinze
-bge x7, x29, condicao3b
-jal x11, fim
+    lw x29, quinze
+    bge x7, x29, condicao3b
+    jal x11, fim
 
 #verifica se c nao é igual a 15
 condicao3b:
-beq x7, x29, fim
-jal x11, change
+    beq x7, x29, fim
+    jal x11, change
 
 # muda x16 (nosso x) para 1 se todas as condicoes anteriores foram satisfeitas
 change:
-addi x16, x16, 1
-jal x11, fim
+    addi x16, x16, 1 #transforma x em 1 em ascii
+    jal x11, fim
 
 fim:
-sw x16, 1024(x0)
-halt
+    sw x16, 1024(x0) #printa o valor de x
+    halt
 
 zero: .word 48
 um: .word 49
@@ -130,5 +130,4 @@ oito: .word 56
 nove: .word 57
 sessenta_dois: .word 62
 quinze: .word 15
-tres: .word 3
 space: .word 32
