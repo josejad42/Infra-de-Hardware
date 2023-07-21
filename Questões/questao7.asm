@@ -9,24 +9,24 @@
 start:
 	sb x10, 1030(x0)
 	lh x10, 1031(x0)
-	sh x10, 1024(x0) #Pegando o valor analógico do sensor de temperatura em A0 e colocando em x10
+	sh x10, 1024(x0) 		#Pegando o valor analógico do sensor de temperatura em A0 e colocando em x10
 
 	addi x14, x0, 310
-	blt x10, x14, opcao1 #Se x10 < 16, pule para opcao1
+	blt x10, x14, opcao1 		#Se x10 < 16, pule para opcao1
 	
 	addi x14, x0, 410
-	blt x10, x14, opcao2 #Se x10 < 21 (e x10 > 15 já que nunca chegaria aqui se fosse), pule para opcao1
+	blt x10, x14, opcao2 		#Se x10 < 21 (e x10 > 15 já que nunca chegaria aqui se fosse), pule para opcao1
 
 	addi x14, x0, 520
-	blt x10, x14, opcao3 #Se x10 < 26 (e x10 > 20 já que nunca chegaria aqui se fosse), pule para opcao3
+	blt x10, x14, opcao3 		#Se x10 < 26 (e x10 > 20 já que nunca chegaria aqui se fosse), pule para opcao3
 
 	addi x14, x0, 620 
-	blt x10, x14, opcao4 #Se x10 < 31 (e x10 > 25 já que nunca chegaria aqui se fosse), pule para opcao4
+	blt x10, x14, opcao4 		#Se x10 < 31 (e x10 > 25 já que nunca chegaria aqui se fosse), pule para opcao4
 
 	addi x14, x0, 720
-	blt x10, x14, opcao5 #Se x10 < 36 (e x10 > 30 já que nunca chegaria aqui se fosse), pule para opcao5
+	blt x10, x14, opcao5 		#Se x10 < 36 (e x10 > 30 já que nunca chegaria aqui se fosse), pule para opcao5
 
-	jal x11, opcao6 #Se x10 > 35 execute esse jump para opcao6
+	jal x11, opcao6 		#Se x10 > 35 execute esse jump para opcao6
 
 	halt 
 
