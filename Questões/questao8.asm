@@ -37,31 +37,31 @@ get_word:
 	
 #Compare4 sao funcoes para verificar os numeros com o 4º bit igual a 1
 compare4:
-	bne x16, x18, compare4_2	#se o 1º bit for == 1 pode ser 9 0u limpar a tela
-	beq x16, x18, display_Eight #se o 1º bit for == 0 -> display 8
+	bne x16, x18, compare4_2		#se o 1º bit for == 1 pode ser 9 0u limpar a tela
+	beq x16, x18, display_Eight 		#se o 1º bit for == 0 -> display 8
 	
 
 compare4_2:
-	bne x14, x18, clear_Display #se o 3º bit for == 1 -> limpe o display
-	beq x14, x18, display_Nine	#se o 3º bit for == 0 -> display 9
+	bne x14, x18, clear_Display 		#se o 3º bit for == 1 -> limpe o display
+	beq x14, x18, display_Nine		#se o 3º bit for == 0 -> display 9
 
 #Compare3 sao funcoes para verificar os numeros com o 3º bit igual a 1
 compare3:
-	bne x15, x18, compare3_2 #se o 2º bit for == 1 pode ser 7 ou 6
-	beq x15, x18, compare3_1 #se o 2º bit for == 0 pode ser 5 ou 4
+	bne x15, x18, compare3_2 		#se o 2º bit for == 1 pode ser 7 ou 6
+	beq x15, x18, compare3_1 		#se o 2º bit for == 0 pode ser 5 ou 4
 
 compare3_2:
-	bne x16, x18, display_Seven #se o 1º bit for == 1 -> display 7
-	beq x16, x18, display_Six	#se o 1º bit for == 0 -> display 6
+	bne x16, x18, display_Seven 		#se o 1º bit for == 1 -> display 7
+	beq x16, x18, display_Six		#se o 1º bit for == 0 -> display 6
 
 compare3_1:
-	bne x16, x18, display_Five	#se o 1º bit for == 1 -> display 5
-	beq x16, x18, display_Four	#se o 1º bit for == 0 -> display 4
+	bne x16, x18, display_Five		#se o 1º bit for == 1 -> display 5
+	beq x16, x18, display_Four		#se o 1º bit for == 0 -> display 4
 
 #Compare2 sao funcoes para verificar os numeros com o 2º bit igual a 1
 compare2:
 	bne x16, x18, display_Three #se o 1º bit for == 1 -> display 3
-	beq x16, x18, display_Two	#se o 1º bit for == 0 -> display 2
+	beq x16, x18, display_Two		#se o 1º bit for == 0 -> display 2
 
 
 #as proximas funcoes mostram no display de sete segmentos o numero correspondente ao nome da funcao 
