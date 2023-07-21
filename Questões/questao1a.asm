@@ -1,6 +1,8 @@
-#carrega a, b, c nos registradores
+#a, b, c estao salvos em x5, x6, x7 respectivamente
+#x esta salvo em x16
+
 condicao1:
-lw x5, a
+lw x5, a #carrega a, b, c nos registradores
 lw x6, b
 lw x7, c
 #garante como x16 (nosso x) começa zerado
@@ -36,9 +38,41 @@ jal x11, fim
 fim:
 halt
 
+#os testes estao comentados abaixo
+
+#teste1
+#a: .word 0
+#b: .word 62
+#c: .word 16
+#resultado x = 1
+
+#teste2
+#a: .word 0
+#b: .word 69
+#c: .word 16
+#resultado x = 0
+
+#teste3
+#a: .word 67
+#b: .word 62
+#c: .word 15
+#resultado x = 0
+
+#teste4
+#a: .word 67
+#b: .word 62
+#c: .word 67
+#resultado x = 1
+
+#teste5
+#a: .word 42
+#b: .word 13
+#c: .word 69
+#resultado x = 1
+
 a: .word 0
 b: .word 62
-c: .word 15
+c: .word 16
 sessenta_dois: .word 62
 quinze: .word 15
 tres: .word 3
