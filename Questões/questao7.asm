@@ -9,7 +9,7 @@
 start:
 	sb x10, 1030(x0)
 	lh x10, 1031(x0)
-	sh x10, 1024(x0) #Pegando o valor analógico do sensor de temperatura e colocando em x10
+	sh x10, 1024(x0) #Pegando o valor analógico do sensor de temperatura em A0 e colocando em x10
 
 	addi x14, x0, 310
 	blt x10, x14, opcao1 #Se x10 < 16, pule para opcao1
