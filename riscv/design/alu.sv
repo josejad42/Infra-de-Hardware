@@ -21,6 +21,8 @@ module alu#(
                     ALUResult = SrcA | SrcB;
             4'b0010:        // ADD
                     ALUResult = SrcA + SrcB;
+            4'b0100:        // XOR
+                    ALUResult = SrcA ^ SrcB;
 	    4'b0110:        // SUB
 		    ALUResult = SrcA - SrcB;
             4'b1000:        // Equal
@@ -30,4 +32,3 @@ module alu#(
             endcase
         end
 endmodule
-
