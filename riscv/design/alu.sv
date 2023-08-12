@@ -17,18 +17,24 @@ module alu#(
             case(Operation)
             4'b0000:        // AND
                     ALUResult = SrcA & SrcB;
-	        4'b0001:        // OR
+	    4'b0001:        // OR
                     ALUResult = SrcA | SrcB;
-			4'b1100:        // SLT
-                    ALUResult = (SrcA < SrcB) ? 1 : 0;
-            4'b0010:        // ADD
+	    4'b0010:        // ADD
                     ALUResult = SrcA + SrcB;
             4'b0101:        // XOR
                     ALUResult = SrcA ^ SrcB;
-			4'b0110:        // SUB
-					ALUResult = SrcA - SrcB;
+	    4'b0110:        // SUB
+		    ALUResult = SrcA - SrcB;
+	    4'b0111:	     //SLLI
+		    ALUResult = SrcA << SrcB[4:0];
             4'b1000:        // Equal
                     ALUResult = (SrcA == SrcB) ? 1 : 0;
+	    4'b1100:        // SLT
+                    ALUResult = (SrcA < SrcB) ? 1 : 0;
+	    4'b1110:	    //SRAI
+		    ALUResult = SrcA >>> SrcB[4:0];
+	    4'b1111:	    //SRLI
+		    ALUResult = SrcA >> SrcB[4:0];
             default:
                     ALUResult = 0;
             endcase
