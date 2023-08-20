@@ -32,11 +32,19 @@ module alu#(
 	    4'b1001:       // Diferrent -- BNE
 		    ALUResult = (SrcA != SrcB) ? 1 : 0;
 	    4'b1010:       // Greater than -- BGE
+                    if(SrcA[31] == 1 && SrcB[31] == 0)
+			ALUResult = 0;
+		    else if(SrcA[31] == 0 && SrcB[31] == 1)
+			ALUResult = 1;
+		    else
 		    ALUResult = (SrcA > SrcB) ? 1 : 0;
-	    4'b1011:      // Less than -- BLT
+	    4'b1100:        // SLT and BLT
+                    if(SrcA[31] == 1 && SrcB[31] == 0)
+			ALUResult = 1;
+		    else if(SrcA[31] == 0 && SrcB[31] == 1)
+			ALUResult = 0;
+		    else
 		    ALUResult = (SrcA < SrcB) ? 1 : 0;
-	    4'b1100:        // SLT             verificando se eh <0
-                    ALUResult = (SrcA < SrcB) && (SrcB[31] == 0) ? 1 : 0;
 	    4'b1110:	    //SRAI
 		    ALUResult = SrcA >>> SrcB[4:0];
 	    4'b1111:	    //SRLI
