@@ -27,6 +27,9 @@ module imm_Gen (
         1'b0
       };
 
+      7'b0110111:  //LUI   
+      Imm_out = {12'b0,inst_code[31:12]};
+
       default: Imm_out = {32'b0};
 
     endcase

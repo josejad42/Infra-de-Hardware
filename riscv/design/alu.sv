@@ -49,6 +49,8 @@ module alu#(
 		    ALUResult = SrcA >>> SrcB[4:0];
 	    4'b1111:	    //SRLI
 		    ALUResult = SrcA >> SrcB[4:0];
+	    4'b1011:       //LUI
+		    ALUResult = SrcB;
             default:
                     ALUResult = 0;
             endcase
