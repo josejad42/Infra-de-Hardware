@@ -45,25 +45,18 @@ Essas foram as instruções solicitadas que implementamos:
 
 ## Autores
 
-<div class = "box">
-  [<img src="https://avatars.githubusercontent.com/jsdana?v=4" width=115><br><sub>Juliana Silva</sub>](https://github.com/jsdana)
-</div>
+[<img src="https://avatars.githubusercontent.com/jsdana?v=4" width=115><br><sub>Juliana Silva</sub>](https://github.com/jsdana)
 
-<div class = "box">
-  [<img src="https://avatars.githubusercontent.com/Vyniciux?v=4" width=115><br><sub>Leandro Vynicius</sub>](https://github.com/Vyniciux)
-</div>
+[<img src="https://avatars.githubusercontent.com/Vyniciux?v=4" width=115><br><sub>Leandro Vynicius</sub>](https://github.com/Vyniciux)
 
-<div class = "box">
-  [<img src="https://avatars.githubusercontent.com/josejad42?v=4" width=115><br><sub>José Alex</sub>](https://github.com/josejad42)
-</div>
+[<img src="https://avatars.githubusercontent.com/josejad42?v=4" width=115><br><sub>José Alex</sub>](https://github.com/josejad42)
 
-<div class = "box">
-  [<img src="https://avatars.githubusercontent.com/jrchakalo?v=4" width=115><br><sub>Júnior Silva</sub>](https://github.com/jrchakalo)
-</div>
+[<img src="https://avatars.githubusercontent.com/jrchakalo?v=4" width=115><br><sub>Júnior Silva</sub>](https://github.com/jrchakalo)
+
 
 <style>
 div.box{ 
   width: 150px;
   display: inline-block
-}
+  }
 </style>
