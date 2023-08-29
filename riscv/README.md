@@ -47,9 +47,12 @@ Essas foram as instruções solicitadas que implementamos:
 
 ## Autores
 
-  [<img src="https://avatars.githubusercontent.com/jsdana?v=4" width=115><br><sub>Juliana Silva</sub>](https://github.com/jsdana)
-  [<img src="https://avatars.githubusercontent.com/Vyniciux?v=4" width=115><br><sub>Leandro Vynicius</sub>](https://github.com/Vyniciux)
-  [<img src="https://avatars.githubusercontent.com/josejad42?v=4" width=115><br><sub>José Alex</sub>](https://github.com/josejad42)
-  [<img src="https://avatars.githubusercontent.com/jrchakalo?v=4" width=115><br><sub>Júnior Silva</sub>](https://github.com/jrchakalo)
+[<img src="https://avatars.githubusercontent.com/jsdana?v=4" width=115><br><sub>Juliana Silva</sub>](https://github.com/jsdana)
+
+[<img src="https://avatars.githubusercontent.com/Vyniciux?v=4" width=115><br><sub>Leandro Vynicius</sub>](https://github.com/Vyniciux)
+
+[<img src="https://avatars.githubusercontent.com/josejad42?v=4" width=115><br><sub>José Alex</sub>](https://github.com/josejad42)
+
+[<img src="https://avatars.githubusercontent.com/jrchakalo?v=4" width=115><br><sub>Júnior Silva</sub>](https://github.com/jrchakalo)
 
 
