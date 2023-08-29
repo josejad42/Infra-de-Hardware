@@ -62,8 +62,8 @@ Essas foram as instruções solicitadas que implementamos:
 </div>
 
 <style>
-  div.box{ 
-    width: 150px;
-    display: inline-block
-  }
+div.box{ 
+  width: 150px;
+  display: inline-block
+}
 </style>
